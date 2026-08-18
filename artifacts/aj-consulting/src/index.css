@@ -141,3 +141,9 @@
 .clip-diagonal-top {
   clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
 }
+
+/* Infinite marquee — translates exactly one-third of total width (3× duplication) */
+@keyframes aj-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}

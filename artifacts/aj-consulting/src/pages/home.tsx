@@ -1,13 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight, Euro, Briefcase, Users, BarChart3,
   Globe2, FileText, Monitor, PenTool, Check, CheckCircle2, Quote
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/hero-bg.jpg";
 import { useLanguage } from "@/contexts/language-context";
+import { Marquee } from "@/components/marquee";
 import type { ReactNode } from "react";
+
+// ─── Animated counter ────────────────────────────────────────────────────────
+function AnimatedNumber({ raw }: { raw: string }) {
+  const match = raw.match(/^(\d+(?:\.\d+)?)(.*)/);
+  if (!match) return <>{raw}</>;
+  const target = parseFloat(match[1]);
+  const suffix = match[2];
+  const isFloat = match[1].includes(".");
+  const decimals = isFloat ? (match[1].split(".")[1]?.length ?? 0) : 0;
+
+  const [display, setDisplay] = useState(0);
+  const started = useRef(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const duration = 1600;
+          const startTime = performance.now();
+          const tick = (now: number) => {
+            const t = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            setDisplay(parseFloat((eased * target).toFixed(decimals)));
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target, decimals]);
+
+  return (
+    <span ref={ref}>
+      {decimals > 0 ? display.toFixed(decimals) : Math.round(display)}
+      {suffix}
+    </span>
+  );
+}
 
 const serviceIcons: ReactNode[] = [
   <Euro className="w-6 h-6" />,
@@ -177,7 +222,9 @@ export default function Home() {
                       ))}
                     </div>
                   ) : (
-                    <div className="text-5xl md:text-7xl font-serif font-bold text-white mb-3 leading-none">{stat.value}</div>
+                    <div className="text-5xl md:text-7xl font-serif font-bold text-white mb-3 leading-none">
+                      <AnimatedNumber raw={stat.value} />
+                    </div>
                   )}
                   <div className="text-[10px] font-bold text-white/25 uppercase tracking-[0.3em]">{stat.label}</div>
                   <div className="absolute bottom-0 left-8 h-[2px] w-0 group-hover:w-10 bg-primary transition-all duration-500" />
@@ -375,28 +422,13 @@ export default function Home() {
       </section>
 
       {/* ─── PARTNERS ──────────────────────────────────────────── */}
-      <section className="py-14 bg-[#F7F7F9] border-y border-gray-200">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0">
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em] shrink-0 md:mr-14">
-              {home.partners.title}
-            </p>
-            <div className="flex flex-1 flex-wrap md:flex-nowrap justify-center md:justify-between items-center gap-8">
-              {partners.map((p, i) => (
-                <motion.div
-                  key={p}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-xl font-serif font-bold text-gray-300 hover:text-gray-500 uppercase tracking-widest transition-colors cursor-default"
-                >
-                  {p}
-                </motion.div>
-              ))}
-            </div>
-          </div>
+      <section className="py-14 bg-[#F7F7F9] border-y border-gray-200 overflow-hidden">
+        <div className="mb-6 text-center">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">
+            {home.partners.title}
+          </p>
         </div>
+        <Marquee items={partners} speed={22} />
       </section>
 
       {/* ─── FREE AUDIT LEAD SECTION ───────────────────────────── */}

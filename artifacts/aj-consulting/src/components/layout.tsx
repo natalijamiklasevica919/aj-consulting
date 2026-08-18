@@ -7,6 +7,8 @@ import { useLanguage } from "@/contexts/language-context";
 import type { Lang } from "@/lib/translations";
 import { FloatingCTA } from "@/components/floating-cta";
 import { LeadPopup } from "@/components/lead-popup";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { CursorGlow } from "@/components/cursor-glow";
 
 const LANGS: { code: Lang; label: string; flag: string }[] = [
   { code: "ru", label: "RU", flag: "🇷🇺" },
@@ -95,9 +97,19 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-white hover:text-primary transition-colors uppercase tracking-widest"
+                  className={cn(
+                    "relative text-sm font-medium transition-colors uppercase tracking-widest group",
+                    location === link.href ? "text-primary" : "text-white hover:text-primary"
+                  )}
                 >
                   {link.label}
+                  {/* active underline dot */}
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 h-[2px] bg-primary transition-all duration-300",
+                      location === link.href ? "w-full" : "w-0 group-hover:w-full"
+                    )}
+                  />
                 </Link>
               </li>
             ))}
@@ -210,6 +222,8 @@ export function Footer() {
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background">
+      <ScrollProgress />
+      <CursorGlow />
       <Navbar />
       <main className="flex-grow flex flex-col relative w-full overflow-hidden">
         {children}
