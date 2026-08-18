@@ -2,23 +2,59 @@ import { Link } from "wouter";
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-3 group select-none">
-      {/* Geometric mark: two intersecting bars forming an abstract "AJ" */}
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        {/* Violet vertical accent bar */}
-        <rect x="0" y="0" width="4" height="36" fill="#8D38ED" />
-        {/* White diagonal slash */}
-        <line x1="10" y1="2" x2="30" y2="34" stroke="white" strokeWidth="3.5" strokeLinecap="square" />
-        {/* Horizontal cross bar (the J's hook abstracted) */}
-        <rect x="10" y="26" width="22" height="3.5" fill="white" opacity="0.75" />
+    <Link href="/" className="flex items-center gap-3.5 group select-none">
+      {/* ── Geometric mark ──
+          Concept: "The Apex" — two bold arms rising to a single point (growth,
+          precision, direction). Left arm violet / right arm white, forming an
+          abstract AJ. A thin violet base-bar anchors the mark. */}
+      <svg
+        width="38"
+        height="34"
+        viewBox="0 0 38 34"
+        fill="none"
+        aria-hidden="true"
+      >
+        {/* Left arm — solid violet */}
+        <path
+          d="M2 32 L18 3"
+          stroke="#8D38ED"
+          strokeWidth="5.5"
+          strokeLinecap="square"
+        />
+        {/* Right arm — white, slightly shorter (J leg) */}
+        <path
+          d="M18 3 L32 24"
+          stroke="white"
+          strokeWidth="5.5"
+          strokeLinecap="square"
+          opacity="0.85"
+        />
+        {/* J hook — continues right arm downward then curls left */}
+        <path
+          d="M32 24 L32 32 Q32 34 26 34 L20 34"
+          stroke="white"
+          strokeWidth="5.5"
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          fill="none"
+          opacity="0.85"
+        />
+        {/* Crossbar — violet accent through center */}
+        <path
+          d="M9 20 L27 20"
+          stroke="#8D38ED"
+          strokeWidth="3.5"
+          strokeLinecap="square"
+          opacity="0.6"
+        />
       </svg>
 
       {/* Wordmark */}
       <div className="leading-none">
-        <div className="font-serif font-bold text-[22px] text-white tracking-tight leading-none">
+        <div className="font-serif font-bold text-[21px] text-white tracking-tight leading-none">
           AJ
         </div>
-        <div className="font-sans text-[8.5px] font-semibold tracking-[0.42em] text-white/55 uppercase mt-[3px]">
+        <div className="font-sans text-[8px] font-bold tracking-[0.5em] text-white/45 uppercase mt-[4px]">
           Group
         </div>
       </div>
