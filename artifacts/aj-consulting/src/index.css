@@ -79,8 +79,8 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --premium: 38 58% 51%; /* #C9943A */
-  --premium-foreground: 0 0% 100%;
+  --premium: 263 80% 80%; /* light lavender — matches violet palette */
+  --premium-foreground: 225 18% 8%;
 
   --radius: 0; /* Sharp, premium corners */
 }
@@ -116,8 +116,8 @@
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 100%;
   
-  --premium: 38 58% 51%;
-  --premium-foreground: 0 0% 100%;
+  --premium: 263 80% 80%;
+  --premium-foreground: 225 18% 8%;
 }
 
 @layer base {

@@ -1,32 +1,77 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@assets/aj-consulting-logo.png";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Logo } from "@/components/logo";
+import { useLanguage } from "@/contexts/language-context";
+import type { Lang } from "@/lib/translations";
+
+const LANGS: { code: Lang; label: string; flag: string }[] = [
+  { code: "ru", label: "RU", flag: "🇷🇺" },
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "lv", label: "LV", flag: "🇱🇻" },
+];
+
+function LangSwitcher() {
+  const { lang, setLang } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const current = LANGS.find((l) => l.code === lang)!;
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-xs font-bold tracking-widest uppercase"
+      >
+        <span>{current.flag}</span>
+        <span>{current.label}</span>
+        <ChevronDown className={cn("w-3 h-3 transition-transform", open && "rotate-180")} />
+      </button>
+      {open && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+          <div className="absolute right-0 top-full mt-2 z-50 bg-[#1C1F28] border border-[#333845] shadow-2xl min-w-[100px]">
+            {LANGS.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => { setLang(l.code); setOpen(false); }}
+                className={cn(
+                  "flex items-center gap-2 w-full px-4 py-2.5 text-xs font-bold tracking-widest uppercase transition-colors hover:bg-white/5",
+                  lang === l.code ? "text-primary" : "text-white/60"
+                )}
+              >
+                <span>{l.flag}</span>
+                <span>{l.label}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     window.scrollTo(0, 0);
   }, [location]);
 
   const navLinks = [
-    { href: "/services", label: "Услуги" },
-    { href: "/about", label: "О нас" },
-    { href: "/contact", label: "Контакты" },
+    { href: "/services", label: t.nav.services },
+    { href: "/about", label: t.nav.about },
+    { href: "/contact", label: t.nav.contact },
   ];
 
   return (
@@ -39,15 +84,10 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          {/* Logo container */}
-          <div className="h-10 flex items-center justify-center">
-             <img src={logo} alt="AJ Consulting Logo" className="h-full object-contain filter brightness-0 invert" />
-          </div>
-        </Link>
+        <Logo />
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -60,19 +100,23 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Link href="/contact" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white border-0 gap-2 font-bold tracking-wide uppercase text-xs h-10 px-8 transition-colors">
-              Сотрудничество
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <LangSwitcher />
+          <Link href="/contact" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white border-0 gap-2 font-bold tracking-wide uppercase text-xs h-10 px-7 transition-colors">
+            {t.nav.cta}
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile: lang + toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <LangSwitcher />
+          <button
+            className="text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -91,7 +135,7 @@ export function Navbar() {
             ))}
             <li className="pt-6 pb-2">
               <Link href="/contact" className="inline-flex items-center justify-center w-full h-12 bg-primary hover:bg-primary/90 text-white font-medium transition-colors">
-                  Начать сотрудничество
+                {t.nav.cta}
               </Link>
             </li>
           </ul>
@@ -102,53 +146,58 @@ export function Navbar() {
 }
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#1C1F28] text-white pt-20 pb-10 border-t border-[#333845]">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <Link href="/">
-              <img src={logo} alt="AJ Consulting Logo" className="h-10 mb-6 object-contain filter brightness-0 invert opacity-90" />
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Премиальный консалтинг для бизнеса в Латвии, ЕС и СНГ.
-              Ваш долгосрочный партнёр в достижении реальных результатов.
+            <Logo />
+            <p className="text-gray-400 text-sm leading-relaxed mt-6">
+              {t.footer.tagline}
             </p>
           </div>
-          
+
           <div>
-            <h4 className="font-serif text-lg mb-6 font-semibold">Услуги</h4>
+            <h4 className="font-serif text-lg mb-6 font-semibold">{t.footer.services.title}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/services#finance" className="hover:text-primary transition-colors">Финансы</Link></li>
-              <li><Link href="/services#restructuring" className="hover:text-primary transition-colors">Реорганизация</Link></li>
-              <li><Link href="/services#hr" className="hover:text-primary transition-colors">Персонал</Link></li>
-              <li><Link href="/services#analytics" className="hover:text-primary transition-colors">Аналитика</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-serif text-lg mb-6 font-semibold">Компания</h4>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/about" className="hover:text-primary transition-colors">О нас</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Контакты</Link></li>
+              {t.footer.serviceLinks.map((label, i) => {
+                const anchors = ["finance", "restructuring", "hr", "analytics"];
+                return (
+                  <li key={i}>
+                    <Link href={`/services#${anchors[i]}`} className="hover:text-primary transition-colors">
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 font-semibold">Связь</h4>
+            <h4 className="font-serif text-lg mb-6 font-semibold">{t.footer.company.title}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li>Латвия, Рига</li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">{t.footer.about}</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors">{t.nav.contact}</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-serif text-lg mb-6 font-semibold">{t.footer.contact.title}</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li>Latvija, Rīga</li>
               <li><a href="mailto:info@aj-consulting.eu" className="hover:text-primary transition-colors">info@aj-consulting.eu</a></li>
               <li><a href="tel:+37100000000" className="hover:text-primary transition-colors">+371 XX XXX XXX</a></li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-[#333845] pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} AJ Consulting. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} {t.footer.copyright}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors">Политика конфиденциальности</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Условия использования</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">{t.footer.privacy}</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">{t.footer.terms}</Link>
           </div>
         </div>
       </div>
