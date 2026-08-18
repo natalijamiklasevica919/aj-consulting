@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AJ Consulting"
+description = "A premium business consulting website for AJ Consulting — a Latvia-based consulting firm offering services in finance, business reorganization, HR, analytics, development, documentation, web development, and web design. The site targets business owners and executives across the EU and CIS markets."
+version = "1.0.0"
+id = "artifacts/aj-consulting"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22818
+
+[services.development]
+run = "pnpm --filter @workspace/aj-consulting run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/aj-consulting", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/aj-consulting/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22818"
+BASE_PATH = "/"
