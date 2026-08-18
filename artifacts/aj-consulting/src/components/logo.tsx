@@ -19,7 +19,7 @@ export function Logo() {
           AJ
         </div>
         <div className="font-sans text-[8.5px] font-semibold tracking-[0.42em] text-white/55 uppercase mt-[3px]">
-          Consulting
+          Group
         </div>
       </div>
     </Link>

@@ -5,6 +5,8 @@ import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { useLanguage } from "@/contexts/language-context";
 import type { Lang } from "@/lib/translations";
+import { FloatingCTA } from "@/components/floating-cta";
+import { LeadPopup } from "@/components/lead-popup";
 
 const LANGS: { code: Lang; label: string; flag: string }[] = [
   { code: "ru", label: "RU", flag: "🇷🇺" },
@@ -213,6 +215,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Footer />
+      <FloatingCTA />
+      <LeadPopup />
     </div>
   );
 }

@@ -51,7 +51,7 @@ export default function About() {
             >
               <img
                 src={teamPhoto}
-                alt="AJ Consulting Team"
+                alt="AJ Group Team"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
               />
             </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
             >
               <img
                 src={officePhoto}
-                alt="AJ Consulting Office"
+                alt="AJ Group Office"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
               />
             </motion.div>
