@@ -60,7 +60,7 @@ export const translations = {
       title: "Наши Услуги",
       subtitle: "Комплексный консалтинг для решения задач любой сложности. От финансового аудита до полного перестроения бизнес-процессов.",
       items: [
-        { title: "Финансы", items: ["Оценка и оптимизация финансовых потоков", "Факторинг", "Небанковское кредитование", "Страхование бизнеса", "Финансовое планирование и бюджетирование"] },
+        { title: "Финансы", items: ["Оценка и оптимизация финансовых потоков", "Факторинг", "Небанковское кредитование (частные фонды и частные инвесторы)", "Страхование бизнеса", "Финансовое планирование и бюджетирование"] },
         { title: "Реорганизация", items: ["Создание холдинговых структур", "Купля-продажа бизнеса", "ISO-сертификация и стандарты качества", "Оптимизация производственных процессов", "Внедрение HACCP", "Вывод бизнеса из серой зоны", "Внедрение CRM систем", "Масштабирование бизнеса"] },
         { title: "Персонал и обучение", items: ["Профессиональный подбор персонала", "Обучение и повышение квалификации сотрудников", "Организация корпоративных тренингов"] },
         { title: "Аналитика", items: ["Глубокий анализ рынка", "Оценка и оптимизация текущей деятельности компании", "Анализ и оптимизация торгового ассортимента"] },
@@ -172,7 +172,7 @@ export const translations = {
       title: "Our Services",
       subtitle: "Comprehensive consulting for challenges of any complexity. From financial audits to complete business process transformation.",
       items: [
-        { title: "Finance", items: ["Cash flow assessment and optimization", "Factoring", "Non-bank lending attraction", "Business insurance", "Financial planning and budgeting"] },
+        { title: "Finance", items: ["Cash flow assessment and optimization", "Factoring", "Non-bank lending attraction (private funds and private investors)", "Business insurance", "Financial planning and budgeting"] },
         { title: "Reorganization", items: ["Holding structure creation", "Business acquisitions and sales", "ISO certification and quality standards", "Production process optimization", "HACCP implementation", "Business legalization (grey zone exit)", "CRM system implementation", "Business scaling"] },
         { title: "HR & Training", items: ["Professional staff recruitment", "Employee training and upskilling", "Corporate training programs"] },
         { title: "Analytics", items: ["In-depth market analysis", "Business performance assessment and optimization", "Sales assortment analysis and optimization"] },
@@ -284,7 +284,7 @@ export const translations = {
       title: "Mūsu pakalpojumi",
       subtitle: "Visaptverošs konsultācijas pakalpojums jebkuras sarežģītības uzdevumiem. No finanšu audita līdz pilnīgai biznesa procesu pārstrukturēšanai.",
       items: [
-        { title: "Finanses", items: ["Finanšu plūsmu novērtēšana un optimizācija", "Faktorings", "Nebanku kreditēšanas piesaiste", "Biznesa apdrošināšana", "Finanšu plānošana un budžetēšana"] },
+        { title: "Finanses", items: ["Finanšu plūsmu novērtēšana un optimizācija", "Faktorings", "Nebanku kreditēšanas piesaiste (privātie fondi un privātie investori)", "Biznesa apdrošināšana", "Finanšu plānošana un budžetēšana"] },
         { title: "Reorganizācija", items: ["Holdinga struktūru veidošana", "Uzņēmumu pirkšana un pārdošana", "ISO sertifikācija un kvalitātes standarti", "Ražošanas procesu optimizācija", "HACCP ieviešana", "Uzņēmuma izvešana no pelēkās zonas", "CRM sistēmu ieviešana", "Biznesa mērogošana"] },
         { title: "Personāls un apmācības", items: ["Profesionāla personāla atlase", "Darbinieku apmācība un kvalifikācijas paaugstināšana", "Korporatīvo apmācību organizēšana"] },
         { title: "Analītika", items: ["Padziļināta tirgus analīze", "Uzņēmuma darbības novērtēšana un optimizācija", "Tirdzniecības sortimenta analīze un optimizācija"] },
