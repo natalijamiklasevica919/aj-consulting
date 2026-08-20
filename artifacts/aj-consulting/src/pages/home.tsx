@@ -120,14 +120,17 @@ export default function Home() {
               <motion.p variants={fadeUp} className="text-base text-white/45 font-light max-w-sm leading-relaxed">
                 {home.hero.subline}
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 shrink-0">
-                <Link href="/contact" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white gap-3 font-bold tracking-[0.2em] uppercase rounded-none h-14 px-10 text-xs transition-colors">
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-3 shrink-0">
+                <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white gap-3 font-bold tracking-[0.2em] uppercase rounded-none h-14 px-10 text-xs transition-colors">
                   {home.hero.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 <Link href="/services" className="inline-flex items-center justify-center border border-white/15 text-white/60 hover:border-white/40 hover:text-white font-bold tracking-[0.2em] uppercase rounded-none h-14 px-10 text-xs transition-colors">
                   {home.hero.secondaryCta}
                 </Link>
+                <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/55 hover:text-primary transition-colors sm:ml-2">
+                  info@aj-consulting.eu
+                </a>
               </motion.div>
             </div>
           </motion.div>
@@ -251,10 +254,13 @@ export default function Home() {
               <p className="text-sm text-white/35 mb-10 leading-relaxed max-w-lg">
                 {home.premium.description}
               </p>
-              <Link href="/contact" className="group inline-flex items-center justify-center bg-white text-[#0A0C10] hover:bg-white/90 tracking-[0.2em] uppercase h-14 px-10 text-xs font-bold transition-colors gap-3">
+              <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-white text-[#0A0C10] hover:bg-white/90 tracking-[0.2em] uppercase h-14 px-10 text-xs font-bold transition-colors gap-3">
                 {home.premium.cta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
+              <a href="mailto:info@aj-consulting.eu" className="inline-block text-xs text-white/35 hover:text-primary transition-colors mt-4">
+                info@aj-consulting.eu
+              </a>
               <p className="text-[11px] text-white/18 mt-6 max-w-md leading-relaxed">{home.premium.note}</p>
             </motion.div>
 
@@ -392,10 +398,13 @@ export default function Home() {
                 {home.finalCta.subtitle}
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/contact" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors gap-3">
+                <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors gap-3">
                   {home.finalCta.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
+                <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/45 hover:text-primary transition-colors">
+                  info@aj-consulting.eu
+                </a>
                 <Link href="/about" className="inline-flex items-center justify-center border border-white/12 text-white/45 hover:border-white/35 hover:text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors">
                   {home.about.cta}
                 </Link>

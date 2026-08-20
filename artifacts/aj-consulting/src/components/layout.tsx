@@ -113,10 +113,15 @@ export function Navbar() {
             ))}
           </ul>
           <LangSwitcher />
-          <Link href="/contact" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white border-0 gap-2 font-bold tracking-wide uppercase text-xs h-10 px-7 transition-colors">
-            {t.nav.cta}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex items-center gap-4">
+            <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/55 hover:text-primary transition-colors">
+              info@aj-consulting.eu
+            </a>
+            <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white border-0 gap-2 font-bold tracking-wide uppercase text-xs h-10 px-7 transition-colors">
+              {t.nav.cta}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </nav>
 
         {/* Mobile: lang + toggle */}
@@ -146,9 +151,12 @@ export function Navbar() {
               </li>
             ))}
             <li className="pt-6 pb-2">
-              <Link href="/contact" className="inline-flex items-center justify-center w-full h-12 bg-primary hover:bg-primary/90 text-white font-medium transition-colors">
+              <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center w-full h-12 bg-primary hover:bg-primary/90 text-white font-medium transition-colors">
                 {t.nav.cta}
-              </Link>
+              </a>
+              <a href="mailto:info@aj-consulting.eu" className="block text-center text-sm text-white/55 hover:text-primary transition-colors mt-3">
+                info@aj-consulting.eu
+              </a>
             </li>
           </ul>
         </div>
