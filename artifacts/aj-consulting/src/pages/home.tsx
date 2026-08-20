@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight, Euro, Briefcase, Users, BarChart3,
-  Globe2, FileText, Monitor, PenTool, Quote
+  Globe2, FileText, Monitor, PenTool
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/hero-bg.jpg";
@@ -287,55 +287,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIALS ──────────────────────────────────────── */}
-      <section className="py-32 bg-[#F7F7F9] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12">
-          {/* header */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-16">
-            <p className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase mb-4">Social Proof</p>
-            <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#0D0F14] leading-tight">
-              {home.testimonials.title}
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {home.testimonials.items.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="bg-white border border-gray-100 p-8 flex flex-col group hover:border-primary/20 hover:shadow-lg transition-all duration-300"
-              >
-                {/* large quote mark */}
-                <Quote className="w-8 h-8 text-primary/25 mb-6 group-hover:text-primary/50 transition-colors shrink-0" />
-
-                <p className="text-[15px] text-gray-600 leading-relaxed flex-1 mb-8 font-light">
-                  "{item.quote}"
-                </p>
-
-                {/* divider */}
-                <div className="h-px bg-gray-100 mb-6" />
-
-                {/* author */}
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                    <span className="text-xs font-bold text-primary">
-                      {item.name.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-[#0D0F14]">{item.name}</p>
-                    <p className="text-xs text-gray-400">{item.role} · <span className="text-primary/70">{item.company}</span></p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

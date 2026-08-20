@@ -208,7 +208,6 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li>Latvija, Rīga</li>
               <li><a href="mailto:info@aj-consulting.eu" className="hover:text-primary transition-colors">info@aj-consulting.eu</a></li>
-              <li><a href="tel:+37100000000" className="hover:text-primary transition-colors">+371 XX XXX XXX</a></li>
             </ul>
           </div>
         </div>

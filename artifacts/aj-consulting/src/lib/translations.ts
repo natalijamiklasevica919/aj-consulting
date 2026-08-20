@@ -28,7 +28,7 @@ export const translations = {
       },
       services: [
         { title: "Финансы", desc: "Оценка и оптимизация финансовых потоков, факторинг, планирование." },
-        { title: "Реорганизация", desc: "Холдинговые структуры, ISO, оптимизация производства." },
+        { title: "Реорганизация", desc: "Холдинговые структуры, купля-продажа бизнеса, ISO, оптимизация производства." },
         { title: "Персонал и обучение", desc: "Подбор персонала, корпоративные тренинги." },
         { title: "Аналитика", desc: "Анализ рынка, оценка деятельности компании." },
         { title: "Развитие бизнеса", desc: "Планы развития, выход на новые рынки ЕС и СНГ." },
@@ -43,29 +43,6 @@ export const translations = {
         cta: "Запросить анализ",
         steps: ["Вводная консультация", "Оценка текущей ситуации", "Определение целевых показателей", "Разработка плана достижения", "Реализация плана"],
         note: "* Услуга предоставляется только после полного анализа и при условии одобрения всех изменений владельцем бизнеса.",
-      },
-      testimonials: {
-        title: "Что говорят клиенты",
-        items: [
-          {
-            quote: "За 6 месяцев работы с AJ Group выручка выросла на 40%. Они реструктурировали финансовую модель и помогли выйти на европейский рынок — профессионально и без лишних слов.",
-            name: "Александр М.",
-            role: "CEO",
-            company: "Redmond Baltic",
-          },
-          {
-            quote: "Реорганизация нашей холдинговой структуры — выполнено в срок, с измеримым финансовым результатом. Команда глубоко погружается в задачу и не выдаёт пустых рекомендаций.",
-            name: "Елена К.",
-            role: "Финансовый директор",
-            company: "VLAVI Group",
-          },
-          {
-            quote: "Стратегия выхода на рынок СНГ дала результат уже в первом квартале: 12 новых контрактов, три новых региона. Работать с ними — значит работать на результат.",
-            name: "Мартиньш Д.",
-            role: "Совладелец",
-            company: "Kentaro",
-          },
-        ],
       },
       about: {
         title: "О нас",
@@ -84,7 +61,7 @@ export const translations = {
       subtitle: "Комплексный консалтинг для решения задач любой сложности. От финансового аудита до полного перестроения бизнес-процессов.",
       items: [
         { title: "Финансы", items: ["Оценка и оптимизация финансовых потоков", "Факторинг", "Небанковское кредитование", "Страхование бизнеса", "Финансовое планирование и бюджетирование"] },
-        { title: "Реорганизация", items: ["Создание холдинговых структур", "ISO-сертификация и стандарты качества", "Оптимизация производственных процессов", "Внедрение HACCP", "Вывод бизнеса из серой зоны", "Внедрение CRM систем", "Масштабирование бизнеса"] },
+        { title: "Реорганизация", items: ["Создание холдинговых структур", "Купля-продажа бизнеса", "ISO-сертификация и стандарты качества", "Оптимизация производственных процессов", "Внедрение HACCP", "Вывод бизнеса из серой зоны", "Внедрение CRM систем", "Масштабирование бизнеса"] },
         { title: "Персонал и обучение", items: ["Профессиональный подбор персонала", "Обучение и повышение квалификации сотрудников", "Организация корпоративных тренингов"] },
         { title: "Аналитика", items: ["Глубокий анализ рынка", "Оценка и оптимизация текущей деятельности компании", "Анализ и оптимизация торгового ассортимента"] },
         { title: "Развитие бизнеса", items: ["Разработка стратегических планов развития", "Выход на новые рынки (ЕС, СНГ)", "Развитие и монетизация клиентской базы", "Стратегический маркетинг и логистика", "Комплексное продвижение в интернете"] },
@@ -115,11 +92,10 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Свяжитесь с нами", subtitle: "Готовы обсудить ваши задачи? Напишите или позвоните нам удобным для вас способом." },
+      hero: { title: "Свяжитесь с нами", subtitle: "Готовы обсудить ваши задачи? Напишите нам на email." },
       info: {
         title: "Контактная информация",
         office: { label: "Офис", value: "Латвия, Европа\nРига, бизнес-центр" },
-        phone: { label: "Телефон", value: "+371 XX XXX XXX" },
         email: { label: "Email" },
       },
       hours: { title: "Время работы", weekdays: "Пн – Пт", weekdaysTime: "09:00 – 18:00", weekend: "Сб – Вс", weekendTime: "Выходной" },
@@ -164,7 +140,7 @@ export const translations = {
       },
       services: [
         { title: "Finance", desc: "Cash flow assessment and optimization, factoring, financial planning." },
-        { title: "Reorganization", desc: "Holding structures, ISO certification, production optimization." },
+        { title: "Reorganization", desc: "Holding structures, business acquisitions and sales, ISO certification, production optimization." },
         { title: "HR & Training", desc: "Recruitment, corporate training programs." },
         { title: "Analytics", desc: "Market analysis, business performance assessment." },
         { title: "Business Development", desc: "Growth plans, EU and CIS market entry strategies." },
@@ -179,29 +155,6 @@ export const translations = {
         cta: "Request Analysis",
         steps: ["Initial Consultation", "Current Situation Assessment", "Setting Target Indicators", "Achievement Plan Development", "Plan Implementation"],
         note: "* The service is provided only after a complete analysis and subject to the client's approval of all proposed changes.",
-      },
-      testimonials: {
-        title: "What Clients Say",
-        items: [
-          {
-            quote: "After 6 months with AJ Group, revenue grew by 40%. They restructured our financial model and guided us into the European market — professionally and without wasted words.",
-            name: "Alexander M.",
-            role: "CEO",
-            company: "Redmond Baltic",
-          },
-          {
-            quote: "The reorganization of our holding structure was delivered on time with measurable financial results. The team dives deep and doesn't hand out empty recommendations.",
-            name: "Elena K.",
-            role: "CFO",
-            company: "VLAVI Group",
-          },
-          {
-            quote: "Their CIS market entry strategy delivered in the first quarter: 12 new contracts, three new regions. Working with them means working for results.",
-            name: "Martins D.",
-            role: "Co-Owner",
-            company: "Kentaro",
-          },
-        ],
       },
       about: {
         title: "About Us",
@@ -220,7 +173,7 @@ export const translations = {
       subtitle: "Comprehensive consulting for challenges of any complexity. From financial audits to complete business process transformation.",
       items: [
         { title: "Finance", items: ["Cash flow assessment and optimization", "Factoring", "Non-bank lending attraction", "Business insurance", "Financial planning and budgeting"] },
-        { title: "Reorganization", items: ["Holding structure creation", "ISO certification and quality standards", "Production process optimization", "HACCP implementation", "Business legalization (grey zone exit)", "CRM system implementation", "Business scaling"] },
+        { title: "Reorganization", items: ["Holding structure creation", "Business acquisitions and sales", "ISO certification and quality standards", "Production process optimization", "HACCP implementation", "Business legalization (grey zone exit)", "CRM system implementation", "Business scaling"] },
         { title: "HR & Training", items: ["Professional staff recruitment", "Employee training and upskilling", "Corporate training programs"] },
         { title: "Analytics", items: ["In-depth market analysis", "Business performance assessment and optimization", "Sales assortment analysis and optimization"] },
         { title: "Business Development", items: ["Strategic development plans", "New market entry (EU, CIS)", "Client base development and monetization", "Strategic marketing and logistics", "Comprehensive digital promotion"] },
@@ -251,11 +204,10 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Contact Us", subtitle: "Ready to discuss your challenges? Email or call our team using your preferred channel." },
+      hero: { title: "Contact Us", subtitle: "Ready to discuss your challenges? Email our team directly." },
       info: {
         title: "Contact Information",
         office: { label: "Office", value: "Latvia, Europe\nRiga, Business Center" },
-        phone: { label: "Phone", value: "+371 XX XXX XXX" },
         email: { label: "Email" },
       },
       hours: { title: "Working Hours", weekdays: "Mon – Fri", weekdaysTime: "09:00 – 18:00", weekend: "Sat – Sun", weekendTime: "Closed" },
@@ -300,7 +252,7 @@ export const translations = {
       },
       services: [
         { title: "Finanses", desc: "Finanšu plūsmu novērtēšana un optimizācija, faktorings, plānošana." },
-        { title: "Reorganizācija", desc: "Holdinga struktūras, ISO, ražošanas optimizācija." },
+        { title: "Reorganizācija", desc: "Holdinga struktūras, uzņēmumu pirkšana un pārdošana, ISO, ražošanas optimizācija." },
         { title: "Personāls un apmācības", desc: "Personāla atlase, korporatīvās apmācības." },
         { title: "Analītika", desc: "Tirgus analīze, uzņēmuma darbības novērtēšana." },
         { title: "Biznesa attīstība", desc: "Attīstības plāni, ieiešana ES un NVS tirgos." },
@@ -315,29 +267,6 @@ export const translations = {
         cta: "Pieprasīt analīzi",
         steps: ["Ievada konsultācija", "Pašreizējās situācijas novērtējums", "Mērķa rādītāju noteikšana", "Sasniegšanas plāna izstrāde", "Plāna īstenošana"],
         note: "* Pakalpojums tiek sniegts tikai pēc pilnīgas analīzes un ar nosacījumu, ka klients apstiprina visas ierosinātās izmaiņas.",
-      },
-      testimonials: {
-        title: "Ko saka klienti",
-        items: [
-          {
-            quote: "6 mēnešu laikā kopā ar AJ Group ieņēmumi pieauga par 40%. Viņi restrukturizēja finanšu modeli un palīdzēja ienākt Eiropas tirgū — profesionāli un bez liekiem vārdiem.",
-            name: "Aleksandrs M.",
-            role: "CEO",
-            company: "Redmond Baltic",
-          },
-          {
-            quote: "Mūsu holdinga struktūras reorganizācija tika pabeigta laikā ar izmērāmiem finanšu rezultātiem. Komanda dziļi iesaistās un nesniedz tukšus ieteikumus.",
-            name: "Jeļena K.",
-            role: "Finanšu direktore",
-            company: "VLAVI Group",
-          },
-          {
-            quote: "Viņu NVS tirgus ienākšanas stratēģija deva rezultātu jau pirmajā ceturksnī: 12 jauni līgumi, trīs jauni reģioni. Strādāt ar viņiem nozīmē strādāt uz rezultātu.",
-            name: "Mārtiņš D.",
-            role: "Līdzīpašnieks",
-            company: "Kentaro",
-          },
-        ],
       },
       about: {
         title: "Par mums",
@@ -356,7 +285,7 @@ export const translations = {
       subtitle: "Visaptverošs konsultācijas pakalpojums jebkuras sarežģītības uzdevumiem. No finanšu audita līdz pilnīgai biznesa procesu pārstrukturēšanai.",
       items: [
         { title: "Finanses", items: ["Finanšu plūsmu novērtēšana un optimizācija", "Faktorings", "Nebanku kreditēšanas piesaiste", "Biznesa apdrošināšana", "Finanšu plānošana un budžetēšana"] },
-        { title: "Reorganizācija", items: ["Holdinga struktūru veidošana", "ISO sertifikācija un kvalitātes standarti", "Ražošanas procesu optimizācija", "HACCP ieviešana", "Uzņēmuma izvešana no pelēkās zonas", "CRM sistēmu ieviešana", "Biznesa mērogošana"] },
+        { title: "Reorganizācija", items: ["Holdinga struktūru veidošana", "Uzņēmumu pirkšana un pārdošana", "ISO sertifikācija un kvalitātes standarti", "Ražošanas procesu optimizācija", "HACCP ieviešana", "Uzņēmuma izvešana no pelēkās zonas", "CRM sistēmu ieviešana", "Biznesa mērogošana"] },
         { title: "Personāls un apmācības", items: ["Profesionāla personāla atlase", "Darbinieku apmācība un kvalifikācijas paaugstināšana", "Korporatīvo apmācību organizēšana"] },
         { title: "Analītika", items: ["Padziļināta tirgus analīze", "Uzņēmuma darbības novērtēšana un optimizācija", "Tirdzniecības sortimenta analīze un optimizācija"] },
         { title: "Biznesa attīstība", items: ["Stratēģisko attīstības plānu izstrāde", "Ieiešana jaunos tirgos (ES, NVS)", "Klientu bāzes attīstība un monetizācija", "Stratēģiskais mārketings un loģistika", "Visaptverošā interneta veicināšana"] },
@@ -387,11 +316,10 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Sazināties ar mums", subtitle: "Gatavi apspriest jūsu uzdevumus? Rakstiet vai zvaniet mūsu komandai sev ērtā veidā." },
+      hero: { title: "Sazināties ar mums", subtitle: "Gatavi apspriest jūsu uzdevumus? Rakstiet mūsu komandai uz e-pastu." },
       info: {
         title: "Kontaktinformācija",
         office: { label: "Birojs", value: "Latvija, Eiropa\nRīga, biznesa centrs" },
-        phone: { label: "Tālrunis", value: "+371 XX XXX XXX" },
         email: { label: "E-pasts" },
       },
       hours: { title: "Darba laiks", weekdays: "P – Pk", weekdaysTime: "09:00 – 18:00", weekend: "Se – Sv", weekendTime: "Slēgts" },

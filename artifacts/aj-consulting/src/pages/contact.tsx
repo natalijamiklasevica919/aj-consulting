@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function Contact() {
@@ -46,13 +46,6 @@ export default function Contact() {
                       <p style={{ whiteSpace: "pre-line" }}>{contact.info.office.value}</p>
                     </div>
                   </div>
-                   <a href={`tel:${contact.info.phone.value.replace(/\s/g, "")}`} className="flex items-start gap-4 text-gray-600 hover:text-primary transition-colors">
-                    <Phone className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <div>
-                      <div className="font-bold text-secondary mb-1">{contact.info.phone.label}</div>
-                      <p>{contact.info.phone.value}</p>
-                    </div>
-                   </a>
                    <a href="mailto:info@aj-consulting.eu" className="flex items-start gap-4 text-gray-600 hover:text-primary transition-colors">
                     <Mail className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
@@ -98,10 +91,6 @@ export default function Contact() {
                     <a href="mailto:info@aj-consulting.eu" className="flex items-center gap-3 border border-white/10 px-5 py-4 text-sm text-white/70 hover:border-primary/50 hover:text-white transition-colors">
                       <Mail className="w-4 h-4 text-primary" />
                       info@aj-consulting.eu
-                    </a>
-                    <a href={`tel:${contact.info.phone.value.replace(/\s/g, "")}`} className="flex items-center gap-3 border border-white/10 px-5 py-4 text-sm text-white/70 hover:border-primary/50 hover:text-white transition-colors">
-                      <Phone className="w-4 h-4 text-primary" />
-                      {contact.info.phone.value}
                     </a>
                   </div>
                 </div>
