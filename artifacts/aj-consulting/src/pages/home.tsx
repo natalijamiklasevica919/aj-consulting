@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight, Euro, Briefcase, Users, BarChart3,
-  Globe2, FileText, Monitor, PenTool, Check, CheckCircle2, Quote
+  Globe2, FileText, Monitor, PenTool, Quote
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/hero-bg.jpg";
@@ -76,59 +76,6 @@ const stagger = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
-
-// ─── Audit inline form ────────────────────────────────────────────────────────
-function AuditForm() {
-  const { t } = useLanguage();
-  const s = t.home.auditSection;
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [done, setDone] = useState(false);
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!contact.trim()) return;
-    setDone(true);
-  };
-
-  if (done) {
-    return (
-      <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-        <CheckCircle2 className="w-12 h-12 text-primary" />
-        <p className="text-xl font-bold text-white">{s.successTitle}</p>
-        <p className="text-sm text-white/50">{s.successMessage}</p>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={submit} className="space-y-3">
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder={s.namePlaceholder}
-        className="w-full h-12 bg-white/5 border border-white/10 text-white text-sm px-4 placeholder:text-white/25 focus:outline-none focus:border-primary/50 transition-colors"
-      />
-      <input
-        type="text"
-        value={contact}
-        onChange={(e) => setContact(e.target.value)}
-        placeholder={s.contactPlaceholder}
-        required
-        className="w-full h-12 bg-white/5 border border-white/10 text-white text-sm px-4 placeholder:text-white/25 focus:outline-none focus:border-primary/50 transition-colors"
-      />
-      <button
-        type="submit"
-        className="group w-full py-3.5 bg-primary hover:bg-primary/90 text-white text-xs font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-3 transition-colors"
-      >
-        {s.cta}
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-      </button>
-      <p className="text-[10px] text-white/20 text-center pt-1">{s.disclaimer}</p>
-    </form>
-  );
-}
 
 // ─── Main page ───────────────────────────────────────────────────────────────
 export default function Home() {
@@ -429,67 +376,6 @@ export default function Home() {
           </p>
         </div>
         <Marquee items={partners} speed={22} />
-      </section>
-
-      {/* ─── FREE AUDIT LEAD SECTION ───────────────────────────── */}
-      <section className="py-0 bg-[#0D0F14] relative overflow-hidden">
-        {/* violet glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_70%_50%,_hsl(268_82%_57%_/_0.12),_transparent)] pointer-events-none" />
-
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
-            {/* left: copy */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={stagger}
-              className="py-20 pr-0 lg:pr-20 flex flex-col justify-center"
-            >
-              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 border border-primary/30 bg-primary/8 px-3 py-1.5 mb-8 w-fit">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span className="text-[9px] font-bold text-primary tracking-[0.3em] uppercase">
-                  {home.auditSection.eyebrow}
-                </span>
-              </motion.div>
-
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif font-semibold text-white mb-5 leading-tight">
-                {home.auditSection.title}
-              </motion.h2>
-
-              <motion.p variants={fadeUp} className="text-sm text-white/40 mb-10 leading-relaxed max-w-sm">
-                {home.auditSection.subtitle}
-              </motion.p>
-
-              <motion.ul variants={stagger} className="space-y-4">
-                {home.auditSection.features.map((f, i) => (
-                  <motion.li key={i} variants={fadeUp} className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm text-white/60">{f}</span>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
-
-            {/* right: form card */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="py-20 lg:py-0 flex items-center"
-            >
-              <div className="w-full bg-white/[0.03] border border-white/8 p-8 md:p-10 lg:ml-0">
-                {/* top violet accent */}
-                <div className="h-[2px] w-10 bg-primary mb-8" />
-                <h3 className="text-xl font-serif font-semibold text-white mb-6">
-                  {home.auditSection.cta}
-                </h3>
-                <AuditForm />
-              </div>
-            </motion.div>
-          </div>
-        </div>
       </section>
 
       {/* ─── FINAL CTA ─────────────────────────────────────────── */}

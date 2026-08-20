@@ -8,23 +8,6 @@ export const translations = {
       contact: "Контакты",
       cta: "Сотрудничество",
     },
-    leadBar: {
-      eyebrow: "Осталось мест: 3",
-      title: "Бесплатная консультация на этой неделе",
-      placeholder: "Телефон или Email",
-      cta: "Получить",
-    },
-    popup: {
-      eyebrow: "Бесплатно · Без обязательств",
-      title: "Бесплатный аудит бизнеса",
-      subtitle: "30-минутная сессия с управляющим партнёром. Только конкретика и цифры.",
-      namePlaceholder: "Ваше имя",
-      contactPlaceholder: "Телефон или Email",
-      cta: "Записаться на сессию",
-      close: "Нет, спасибо",
-      successTitle: "Готово!",
-      successMessage: "Ожидайте звонка в течение 2 часов.",
-    },
     home: {
       hero: {
         headline: "Ваш путь к успеху начинается с правильного партнёра",
@@ -84,22 +67,6 @@ export const translations = {
           },
         ],
       },
-      auditSection: {
-        eyebrow: "Бесплатно",
-        title: "Экспресс-аудит вашего бизнеса",
-        subtitle: "За 30 минут определим 3 конкретные точки роста, которые можно реализовать уже в этом квартале.",
-        features: [
-          "Анализ текущих финансовых показателей",
-          "Выявление ключевых точек роста",
-          "Конкретные рекомендации без воды",
-        ],
-        namePlaceholder: "Ваше имя",
-        contactPlaceholder: "Телефон или Email",
-        cta: "Записаться бесплатно",
-        disclaimer: "Без обязательств — первая консультация всегда бесплатна",
-        successTitle: "Заявка получена!",
-        successMessage: "Свяжемся в течение 2 часов.",
-      },
       about: {
         title: "О нас",
         text: "Наша команда состоит из высококвалифицированных специалистов с более чем 10-летним опытом в различных отраслях. Мы ориентированы на результат и долгосрочное сотрудничество. Каждый клиент получает индивидуальный подход и чёткое понимание того, что необходимо внедрить в его бизнес.",
@@ -108,7 +75,7 @@ export const translations = {
       partners: { title: "Наши партнёры" },
       finalCta: {
         title: "Готовы начать?",
-        subtitle: "Оставьте заявку, и наш управляющий партнер свяжется с вами для обсуждения задач вашего бизнеса.",
+        subtitle: "Свяжитесь с нами удобным способом, чтобы обсудить задачи вашего бизнеса.",
         cta: "Связаться с нами",
       },
     },
@@ -148,7 +115,7 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Свяжитесь с нами", subtitle: "Готовы обсудить ваши задачи? Оставьте заявку, и мы организуем вводную консультацию." },
+      hero: { title: "Свяжитесь с нами", subtitle: "Готовы обсудить ваши задачи? Напишите или позвоните нам удобным для вас способом." },
       info: {
         title: "Контактная информация",
         office: { label: "Офис", value: "Латвия, Европа\nРига, бизнес-центр" },
@@ -156,19 +123,6 @@ export const translations = {
         email: { label: "Email" },
       },
       hours: { title: "Время работы", weekdays: "Пн – Пт", weekdaysTime: "09:00 – 18:00", weekend: "Сб – Вс", weekendTime: "Выходной" },
-      form: {
-        title: "Отправить запрос",
-        name: "Имя", namePlaceholder: "Ваше имя",
-        company: "Компания", companyPlaceholder: "Название компании",
-        email: "Email", phone: "Телефон",
-        service: "Интересующая услуга", serviceDefault: "Выберите направление...",
-        serviceOptions: ["PREMIUM (Эксклюзив)", "Финансы", "Реорганизация", "Персонал и обучение", "Аналитика", "Развитие бизнеса", "Документация", "Веб-разработка / Дизайн"],
-        message: "Сообщение", messagePlaceholder: "Опишите вашу задачу вкратце...",
-        submit: "Отправить",
-        consent: "Нажимая кнопку, вы соглашаетесь на обработку персональных данных.",
-        successTitle: "Заявка отправлена",
-        successMessage: "Наш менеджер свяжется с вами в ближайшее время.",
-      },
     },
     footer: {
       tagline: "Премиальный консалтинг для бизнеса в Латвии, ЕС и СНГ. Ваш долгосрочный партнёр в достижении реальных результатов.",
@@ -189,23 +143,6 @@ export const translations = {
       about: "About",
       contact: "Contact",
       cta: "Partner With Us",
-    },
-    leadBar: {
-      eyebrow: "Spots left: 3",
-      title: "Free consultation this week",
-      placeholder: "Phone or Email",
-      cta: "Book",
-    },
-    popup: {
-      eyebrow: "Free · No Obligation",
-      title: "Free Business Audit",
-      subtitle: "A 30-minute strategic session with our managing partner. Pure substance, no fluff.",
-      namePlaceholder: "Your name",
-      contactPlaceholder: "Phone or Email",
-      cta: "Book a Session",
-      close: "No, thanks",
-      successTitle: "Done!",
-      successMessage: "Expect a call within 2 hours.",
     },
     home: {
       hero: {
@@ -266,22 +203,6 @@ export const translations = {
           },
         ],
       },
-      auditSection: {
-        eyebrow: "Free",
-        title: "Express Business Audit",
-        subtitle: "In 30 minutes we identify 3 specific growth points you can act on this quarter.",
-        features: [
-          "Analysis of current financial metrics",
-          "Identification of key growth levers",
-          "Actionable recommendations, no filler",
-        ],
-        namePlaceholder: "Your name",
-        contactPlaceholder: "Phone or Email",
-        cta: "Book for Free",
-        disclaimer: "No obligation — first consultation is always free",
-        successTitle: "Request received!",
-        successMessage: "We'll be in touch within 2 hours.",
-      },
       about: {
         title: "About Us",
         text: "Our team consists of highly qualified specialists with over 10 years of experience across various industries. We are results-oriented and focused on long-term cooperation. Every client receives a tailored approach and a clear understanding of what needs to be implemented in their business.",
@@ -290,7 +211,7 @@ export const translations = {
       partners: { title: "Our Partners" },
       finalCta: {
         title: "Ready to Get Started?",
-        subtitle: "Submit an inquiry and our managing partner will contact you to discuss your business objectives.",
+        subtitle: "Contact us using your preferred channel to discuss your business objectives.",
         cta: "Contact Us",
       },
     },
@@ -330,7 +251,7 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Contact Us", subtitle: "Ready to discuss your challenges? Submit an inquiry and we will arrange an introductory consultation." },
+      hero: { title: "Contact Us", subtitle: "Ready to discuss your challenges? Email or call our team using your preferred channel." },
       info: {
         title: "Contact Information",
         office: { label: "Office", value: "Latvia, Europe\nRiga, Business Center" },
@@ -338,19 +259,6 @@ export const translations = {
         email: { label: "Email" },
       },
       hours: { title: "Working Hours", weekdays: "Mon – Fri", weekdaysTime: "09:00 – 18:00", weekend: "Sat – Sun", weekendTime: "Closed" },
-      form: {
-        title: "Send a Request",
-        name: "Name", namePlaceholder: "Your name",
-        company: "Company", companyPlaceholder: "Company name",
-        email: "Email", phone: "Phone",
-        service: "Service of Interest", serviceDefault: "Choose a direction...",
-        serviceOptions: ["PREMIUM (Exclusive)", "Finance", "Reorganization", "HR & Training", "Analytics", "Business Development", "Documentation", "Web Development / Design"],
-        message: "Message", messagePlaceholder: "Briefly describe your challenge...",
-        submit: "Send",
-        consent: "By clicking the button, you agree to the processing of personal data.",
-        successTitle: "Request Sent",
-        successMessage: "Our manager will contact you shortly.",
-      },
     },
     footer: {
       tagline: "Premium business consulting in Latvia, EU and CIS. Your long-term partner in achieving real results.",
@@ -371,23 +279,6 @@ export const translations = {
       about: "Par mums",
       contact: "Kontakti",
       cta: "Sadarbība",
-    },
-    leadBar: {
-      eyebrow: "Atlikušas vietas: 3",
-      title: "Bezmaksas konsultācija šajā nedēļā",
-      placeholder: "Tālrunis vai E-pasts",
-      cta: "Saņemt",
-    },
-    popup: {
-      eyebrow: "Bezmaksas · Bez saistībām",
-      title: "Bezmaksas biznesa audits",
-      subtitle: "30 minūšu stratēģiskā sesija ar vadošo partneri. Tikai konkrēti fakti un skaitļi.",
-      namePlaceholder: "Jūsu vārds",
-      contactPlaceholder: "Tālrunis vai E-pasts",
-      cta: "Pieteikties sesijai",
-      close: "Nē, paldies",
-      successTitle: "Gatavs!",
-      successMessage: "Gaidiet zvanu 2 stundu laikā.",
     },
     home: {
       hero: {
@@ -448,22 +339,6 @@ export const translations = {
           },
         ],
       },
-      auditSection: {
-        eyebrow: "Bezmaksas",
-        title: "Biznesa ekspresaudits",
-        subtitle: "30 minūtēs noteikt 3 konkrētus izaugsmes punktus, ko var īstenot jau šajā ceturksnī.",
-        features: [
-          "Pašreizējo finanšu rādītāju analīze",
-          "Galveno izaugsmes sviru identificēšana",
-          "Praktiski ieteikumi bez liekvārdības",
-        ],
-        namePlaceholder: "Jūsu vārds",
-        contactPlaceholder: "Tālrunis vai E-pasts",
-        cta: "Pieteikties bezmaksas",
-        disclaimer: "Bez saistībām — pirmā konsultācija vienmēr ir bezmaksas",
-        successTitle: "Pieprasījums saņemts!",
-        successMessage: "Sazināsimies 2 stundu laikā.",
-      },
       about: {
         title: "Par mums",
         text: "Mūsu komandu veido augsti kvalificēti speciālisti ar vairāk nekā 10 gadu pieredzi dažādās nozarēs. Mēs esam orientēti uz rezultātu un ilgtermiņa sadarbību. Katrs klients saņem individuālu pieeju un skaidru izpratni par to, kas jāievieš viņu biznesā.",
@@ -472,7 +347,7 @@ export const translations = {
       partners: { title: "Mūsu partneri" },
       finalCta: {
         title: "Gatavi sākt?",
-        subtitle: "Iesniedziet pieprasījumu un mūsu vadošais partneris sazināsies ar jums, lai apspriestu jūsu biznesa uzdevumus.",
+        subtitle: "Sazinieties ar mums sev ērtā veidā, lai apspriestu jūsu biznesa uzdevumus.",
         cta: "Sazināties ar mums",
       },
     },
@@ -512,7 +387,7 @@ export const translations = {
       },
     },
     contact: {
-      hero: { title: "Sazināties ar mums", subtitle: "Gatavi apspriest jūsu uzdevumus? Iesniedziet pieprasījumu un mēs organizēsim ievada konsultāciju." },
+      hero: { title: "Sazināties ar mums", subtitle: "Gatavi apspriest jūsu uzdevumus? Rakstiet vai zvaniet mūsu komandai sev ērtā veidā." },
       info: {
         title: "Kontaktinformācija",
         office: { label: "Birojs", value: "Latvija, Eiropa\nRīga, biznesa centrs" },
@@ -520,19 +395,6 @@ export const translations = {
         email: { label: "E-pasts" },
       },
       hours: { title: "Darba laiks", weekdays: "P – Pk", weekdaysTime: "09:00 – 18:00", weekend: "Se – Sv", weekendTime: "Slēgts" },
-      form: {
-        title: "Nosūtīt pieprasījumu",
-        name: "Vārds", namePlaceholder: "Jūsu vārds",
-        company: "Uzņēmums", companyPlaceholder: "Uzņēmuma nosaukums",
-        email: "E-pasts", phone: "Tālrunis",
-        service: "Interesējošais pakalpojums", serviceDefault: "Izvēlieties virzienu...",
-        serviceOptions: ["PREMIUM (Ekskluzīvs)", "Finanses", "Reorganizācija", "Personāls un apmācības", "Analītika", "Biznesa attīstība", "Dokumentācija", "Web izstrāde / Dizains"],
-        message: "Ziņojums", messagePlaceholder: "Īsi aprakstiet savu uzdevumu...",
-        submit: "Nosūtīt",
-        consent: "Nospiežot pogu, jūs piekrītat personas datu apstrādei.",
-        successTitle: "Pieprasījums nosūtīts",
-        successMessage: "Mūsu vadītājs sazināsies ar jums tuvākajā laikā.",
-      },
     },
     footer: {
       tagline: "Premium biznesa konsultācijas Latvijā, ES un NVS. Jūsu ilgtermiņa partneris reālu rezultātu sasniegšanā.",

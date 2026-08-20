@@ -1,23 +1,10 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function Contact() {
-  const { toast } = useToast();
   const { t } = useLanguage();
   const { contact } = t;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: contact.form.successTitle,
-      description: contact.form.successMessage,
-    });
-  };
 
   return (
     <>
@@ -59,20 +46,20 @@ export default function Contact() {
                       <p style={{ whiteSpace: "pre-line" }}>{contact.info.office.value}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 text-gray-600">
+                   <a href={`tel:${contact.info.phone.value.replace(/\s/g, "")}`} className="flex items-start gap-4 text-gray-600 hover:text-primary transition-colors">
                     <Phone className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
                       <div className="font-bold text-secondary mb-1">{contact.info.phone.label}</div>
                       <p>{contact.info.phone.value}</p>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4 text-gray-600">
+                   </a>
+                   <a href="mailto:info@aj-consulting.eu" className="flex items-start gap-4 text-gray-600 hover:text-primary transition-colors">
                     <Mail className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
                       <div className="font-bold text-secondary mb-1">{contact.info.email.label}</div>
                       <p>info@aj-consulting.eu</p>
                     </div>
-                  </div>
+                   </a>
                 </div>
               </div>
 
@@ -93,61 +80,31 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              <div className="bg-white p-8 md:p-12 shadow-2xl shadow-gray-200/50 border border-gray-100">
-                <h3 className="text-2xl font-serif font-semibold text-secondary mb-8">
-                  {contact.form.title}
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.name}</label>
-                      <Input placeholder={contact.form.namePlaceholder} required />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.company}</label>
-                      <Input placeholder={contact.form.companyPlaceholder} />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.email}</label>
-                      <Input type="email" placeholder="example@domain.com" required />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.phone}</label>
-                      <Input type="tel" placeholder="+371" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.service}</label>
-                    <select className="flex h-12 w-full border-b border-gray-300 bg-transparent px-3 py-2 text-sm focus:outline-none focus:border-primary">
-                      <option value="">{contact.form.serviceDefault}</option>
-                      {contact.form.serviceOptions.map((opt, i) => {
-                        const vals = ["premium", "finance", "restructuring", "hr", "analytics", "development", "docs", "web"];
-                        return <option key={i} value={vals[i]}>{opt}</option>;
-                      })}
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wide">{contact.form.message}</label>
-                    <Textarea placeholder={contact.form.messagePlaceholder} required />
-                  </div>
-
-                  <Button type="submit" size="lg" className="w-full bg-primary text-white hover:bg-primary/90 rounded-none font-bold tracking-widest uppercase mt-4">
-                    {contact.form.submit}
-                  </Button>
-                  <p className="text-xs text-gray-400 text-center">
-                    {contact.form.consent}
+              <div className="h-full bg-[#0D0F14] p-8 md:p-12 shadow-2xl shadow-gray-200/20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[90px] pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="h-[2px] w-12 bg-primary mb-8" />
+                  <h3 className="text-3xl font-serif font-semibold text-white mb-5">
+                    {contact.hero.title}
+                  </h3>
+                  <p className="text-sm text-white/45 leading-relaxed mb-10">
+                    {contact.hero.subtitle}
                   </p>
-                </form>
+                  <div className="space-y-4">
+                    <a href="mailto:info@aj-consulting.eu" className="flex items-center gap-3 border border-white/10 px-5 py-4 text-sm text-white/70 hover:border-primary/50 hover:text-white transition-colors">
+                      <Mail className="w-4 h-4 text-primary" />
+                      info@aj-consulting.eu
+                    </a>
+                    <a href={`tel:${contact.info.phone.value.replace(/\s/g, "")}`} className="flex items-center gap-3 border border-white/10 px-5 py-4 text-sm text-white/70 hover:border-primary/50 hover:text-white transition-colors">
+                      <Phone className="w-4 h-4 text-primary" />
+                      {contact.info.phone.value}
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
