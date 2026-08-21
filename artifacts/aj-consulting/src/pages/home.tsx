@@ -343,17 +343,12 @@ export default function Home() {
               <motion.p variants={fadeUp} className="text-sm text-white/35 mb-14 max-w-xl mx-auto leading-relaxed">
                 {home.finalCta.subtitle}
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors gap-3">
-                  {home.finalCta.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <motion.div variants={fadeUp} className="flex items-center justify-center">
+                <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-12 text-xs transition-colors gap-4">
+                  <span className="font-bold tracking-[0.2em] uppercase">{home.finalCta.cta}</span>
+                  <span className="w-px h-4 bg-white/30 shrink-0" />
+                  <span className="font-bold tracking-[0.2em] uppercase">info@aj-consulting.eu</span>
                 </a>
-                <a href="mailto:info@aj-consulting.eu" className="text-xs font-bold text-white/45 hover:text-primary transition-colors">
-                  info@aj-consulting.eu
-                </a>
-                <Link href="/about" className="inline-flex items-center justify-center border border-white/12 text-white/45 hover:border-white/35 hover:text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors">
-                  {home.about.cta}
-                </Link>
               </motion.div>
             </motion.div>
             <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent mt-16" />
