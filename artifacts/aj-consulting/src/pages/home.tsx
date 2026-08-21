@@ -124,7 +124,7 @@ export default function Home() {
                 <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-10 text-xs transition-colors gap-4">
                   <span className="font-bold tracking-[0.2em] uppercase">{home.hero.cta}</span>
                   <span className="w-px h-4 bg-white/30 shrink-0" />
-                  <span className="font-normal tracking-normal normal-case opacity-80">info@aj-consulting.eu</span>
+                  <span className="font-bold tracking-[0.2em] uppercase">info@aj-consulting.eu</span>
                 </a>
               </motion.div>
             </div>
@@ -253,7 +253,7 @@ export default function Home() {
                 {home.premium.cta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="mailto:info@aj-consulting.eu" className="inline-block text-xs text-white/35 hover:text-primary transition-colors mt-4">
+              <a href="mailto:info@aj-consulting.eu" className="inline-block text-xs font-bold text-white/35 hover:text-primary transition-colors mt-4">
                 info@aj-consulting.eu
               </a>
               <p className="text-[11px] text-white/18 mt-6 max-w-md leading-relaxed">{home.premium.note}</p>
@@ -348,7 +348,7 @@ export default function Home() {
                   {home.finalCta.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/45 hover:text-primary transition-colors">
+                <a href="mailto:info@aj-consulting.eu" className="text-xs font-bold text-white/45 hover:text-primary transition-colors">
                   info@aj-consulting.eu
                 </a>
                 <Link href="/about" className="inline-flex items-center justify-center border border-white/12 text-white/45 hover:border-white/35 hover:text-white rounded-none h-14 px-12 text-xs font-bold tracking-[0.2em] uppercase transition-colors">

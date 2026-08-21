@@ -116,7 +116,7 @@ export function Navbar() {
           <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white h-10 px-7 gap-3 transition-colors">
             <span className="font-bold tracking-wide uppercase text-xs">{t.nav.cta}</span>
             <span className="w-px h-3.5 bg-white/30 shrink-0" />
-            <span className="text-xs font-normal tracking-normal normal-case opacity-80">info@aj-consulting.eu</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase">info@aj-consulting.eu</span>
           </a>
         </nav>
 
@@ -150,7 +150,7 @@ export function Navbar() {
               <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center w-full h-12 bg-primary hover:bg-primary/90 text-white font-medium transition-colors">
                 {t.nav.cta}
               </a>
-              <a href="mailto:info@aj-consulting.eu" className="block text-center text-sm text-white/55 hover:text-primary transition-colors mt-3">
+              <a href="mailto:info@aj-consulting.eu" className="block text-center text-sm font-bold text-white/55 hover:text-primary transition-colors mt-3">
                 info@aj-consulting.eu
               </a>
             </li>
@@ -203,7 +203,7 @@ export function Footer() {
             <h4 className="font-serif text-lg mb-6 font-semibold">{t.footer.contact.title}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>Latvija, Rīga</li>
-              <li><a href="mailto:info@aj-consulting.eu" className="hover:text-primary transition-colors">info@aj-consulting.eu</a></li>
+              <li><a href="mailto:info@aj-consulting.eu" className="font-bold hover:text-primary transition-colors">info@aj-consulting.eu</a></li>
             </ul>
           </div>
         </div>
