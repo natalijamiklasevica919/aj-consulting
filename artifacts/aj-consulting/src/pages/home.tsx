@@ -121,15 +121,10 @@ export default function Home() {
                 {home.hero.subline}
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-3 shrink-0">
-                <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white gap-3 font-bold tracking-[0.2em] uppercase rounded-none h-14 px-10 text-xs transition-colors">
-                  {home.hero.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link href="/services" className="inline-flex items-center justify-center border border-white/15 text-white/60 hover:border-white/40 hover:text-white font-bold tracking-[0.2em] uppercase rounded-none h-14 px-10 text-xs transition-colors">
-                  {home.hero.secondaryCta}
-                </Link>
-                <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/55 hover:text-primary transition-colors sm:ml-2">
-                  info@aj-consulting.eu
+                <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white rounded-none h-14 px-10 text-xs transition-colors gap-4">
+                  <span className="font-bold tracking-[0.2em] uppercase">{home.hero.cta}</span>
+                  <span className="w-px h-4 bg-white/30 shrink-0" />
+                  <span className="font-normal tracking-normal normal-case opacity-80">info@aj-consulting.eu</span>
                 </a>
               </motion.div>
             </div>
