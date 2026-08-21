@@ -113,15 +113,11 @@ export function Navbar() {
             ))}
           </ul>
           <LangSwitcher />
-          <div className="flex items-center gap-4">
-            <a href="mailto:info@aj-consulting.eu" className="text-xs text-white/55 hover:text-primary transition-colors">
-              info@aj-consulting.eu
-            </a>
-            <a href="mailto:info@aj-consulting.eu" className="group inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white border-0 gap-2 font-bold tracking-wide uppercase text-xs h-10 px-7 transition-colors">
-              {t.nav.cta}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+          <a href="mailto:info@aj-consulting.eu" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white h-10 px-7 gap-3 transition-colors">
+            <span className="font-bold tracking-wide uppercase text-xs">{t.nav.cta}</span>
+            <span className="w-px h-3.5 bg-white/30 shrink-0" />
+            <span className="text-xs font-normal tracking-normal normal-case opacity-80">info@aj-consulting.eu</span>
+          </a>
         </nav>
 
         {/* Mobile: lang + toggle */}
