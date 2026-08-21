@@ -12,7 +12,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
     const stored = localStorage.getItem("aj-lang") as Lang | null;
-    return stored && ["ru", "en", "lv"].includes(stored) ? stored : "ru";
+    return stored && ["ru", "en", "lv"].includes(stored) ? stored : "en";
   });
 
   const handleSetLang = (newLang: Lang) => {
