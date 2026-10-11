@@ -9,7 +9,8 @@ the repository root. The root `vercel.json` defines independent builds:
 | `api-server` | `/api` and `/api/*` | Express default export in `src/app.ts` |
 | `mockup-sandbox` | None (internal only) | `dist` |
 
-The proposed names and public routes require owner confirmation before publishing.
+The owner confirmed these service names, public routes, and absence of bindings
+on 2026-10-11.
 The sandbox is deliberately not exposed as part of the public consulting website.
 
 ## Builds and routing

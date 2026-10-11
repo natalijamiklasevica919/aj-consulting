@@ -1,0 +1,1 @@
+- [Vercel exposure policy](vercel-exposure.md) — owner-approved public website/API; design sandbox must remain internal.
